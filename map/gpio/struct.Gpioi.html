@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Gpioi` struct in crate `map`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Gpioi">
+
+    <title>map::gpio::Gpioi - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>map</a>::<wbr><a href='index.html'>gpio</a></p><script>window.sidebarCurrent = {name: 'Gpioi', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>map</a>::<wbr><a href='index.html'>gpio</a>::<wbr><a class='struct' href=''>Gpioi</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/map/gpio.rs.html#5' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct Gpioi {
+    pub moder: <a class='struct' href='../../map/gpio/struct.Moder.html' title='map::gpio::Moder'>Moder</a>,
+    pub otyper: <a class='struct' href='../../map/gpio/struct.Otyper.html' title='map::gpio::Otyper'>Otyper</a>,
+    pub ospeedr: <a class='struct' href='../../map/gpio/struct.Ospeedr.html' title='map::gpio::Ospeedr'>Ospeedr</a>,
+    pub pupdr: <a class='struct' href='../../map/gpio/struct.Pupdr.html' title='map::gpio::Pupdr'>Pupdr</a>,
+    pub idr: <a class='struct' href='../../map/gpio/struct.Idr.html' title='map::gpio::Idr'>Idr</a>,
+    pub odr: <a class='struct' href='../../map/gpio/struct.Odr.html' title='map::gpio::Odr'>Odr</a>,
+    pub bsrr: <a class='struct' href='../../map/gpio/struct.Bsrr.html' title='map::gpio::Bsrr'>Bsrr</a>,
+    pub lckr: <a class='struct' href='../../map/gpio/struct.Lckr.html' title='map::gpio::Lckr'>Lckr</a>,
+    pub afrl: <a class='struct' href='../../map/gpio/struct.Afrl.html' title='map::gpio::Afrl'>Afrl</a>,
+    pub afrh: <a class='struct' href='../../map/gpio/struct.Afrh.html' title='map::gpio::Afrh'>Afrh</a>,
+}</pre><div class='docblock'><p>General-purpose I/Os</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.moder' class='structfield'>
+                           <span id='moder.v' class='invisible'>
+                           <code>moder: <a class='struct' href='../../map/gpio/struct.Moder.html' title='map::gpio::Moder'>Moder</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x00 - GPIO port mode register</p>
+</div><span id='structfield.otyper' class='structfield'>
+                           <span id='otyper.v' class='invisible'>
+                           <code>otyper: <a class='struct' href='../../map/gpio/struct.Otyper.html' title='map::gpio::Otyper'>Otyper</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x04 - GPIO port output type register</p>
+</div><span id='structfield.ospeedr' class='structfield'>
+                           <span id='ospeedr.v' class='invisible'>
+                           <code>ospeedr: <a class='struct' href='../../map/gpio/struct.Ospeedr.html' title='map::gpio::Ospeedr'>Ospeedr</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x08 - GPIO port output speed register</p>
+</div><span id='structfield.pupdr' class='structfield'>
+                           <span id='pupdr.v' class='invisible'>
+                           <code>pupdr: <a class='struct' href='../../map/gpio/struct.Pupdr.html' title='map::gpio::Pupdr'>Pupdr</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x0c - GPIO port pull-up/pull-down register</p>
+</div><span id='structfield.idr' class='structfield'>
+                           <span id='idr.v' class='invisible'>
+                           <code>idr: <a class='struct' href='../../map/gpio/struct.Idr.html' title='map::gpio::Idr'>Idr</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x10 - GPIO port input data register</p>
+</div><span id='structfield.odr' class='structfield'>
+                           <span id='odr.v' class='invisible'>
+                           <code>odr: <a class='struct' href='../../map/gpio/struct.Odr.html' title='map::gpio::Odr'>Odr</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x14 - GPIO port output data register</p>
+</div><span id='structfield.bsrr' class='structfield'>
+                           <span id='bsrr.v' class='invisible'>
+                           <code>bsrr: <a class='struct' href='../../map/gpio/struct.Bsrr.html' title='map::gpio::Bsrr'>Bsrr</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x18 - GPIO port bit set/reset register</p>
+</div><span id='structfield.lckr' class='structfield'>
+                           <span id='lckr.v' class='invisible'>
+                           <code>lckr: <a class='struct' href='../../map/gpio/struct.Lckr.html' title='map::gpio::Lckr'>Lckr</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x1c - GPIO port configuration lock register</p>
+</div><span id='structfield.afrl' class='structfield'>
+                           <span id='afrl.v' class='invisible'>
+                           <code>afrl: <a class='struct' href='../../map/gpio/struct.Afrl.html' title='map::gpio::Afrl'>Afrl</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x20 - GPIO alternate function low register</p>
+</div><span id='structfield.afrh' class='structfield'>
+                           <span id='afrh.v' class='invisible'>
+                           <code>afrh: <a class='struct' href='../../map/gpio/struct.Afrh.html' title='map::gpio::Afrh'>Afrh</a></code>
+                           </span></span><span class='stab '></span><div class='docblock'><p>0x24 - GPIO alternate function high register</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "map";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

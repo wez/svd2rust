@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `gpio` mod in crate `map`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, gpio">
+
+    <title>map::gpio - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>map</a></p><script>window.sidebarCurrent = {name: 'gpio', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>map</a>::<wbr><a class='mod' href=''>gpio</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/map/gpio.rs.html#1-553' title='goto source code'>[src]</a></span></h1>
+<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Dir.html'
+                                  title='map::gpio::Dir'>Dir</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DirR.html'
+                                  title='map::gpio::DirR'>DirR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DirW.html'
+                                  title='map::gpio::DirW'>DirW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Dirclr.html'
+                                  title='map::gpio::Dirclr'>Dirclr</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DirclrR.html'
+                                  title='map::gpio::DirclrR'>DirclrR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DirclrW.html'
+                                  title='map::gpio::DirclrW'>DirclrW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Dirset.html'
+                                  title='map::gpio::Dirset'>Dirset</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DirsetR.html'
+                                  title='map::gpio::DirsetR'>DirsetR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DirsetW.html'
+                                  title='map::gpio::DirsetW'>DirsetW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Gpio.html'
+                                  title='map::gpio::Gpio'>Gpio</a></td>
+                           <td class='docblock-short'>
+                                <p>General purpose input and output.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.In.html'
+                                  title='map::gpio::In'>In</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.InR.html'
+                                  title='map::gpio::InR'>InR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Out.html'
+                                  title='map::gpio::Out'>Out</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.OutR.html'
+                                  title='map::gpio::OutR'>OutR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.OutW.html'
+                                  title='map::gpio::OutW'>OutW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Outclr.html'
+                                  title='map::gpio::Outclr'>Outclr</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.OutclrR.html'
+                                  title='map::gpio::OutclrR'>OutclrR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.OutclrW.html'
+                                  title='map::gpio::OutclrW'>OutclrW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Outset.html'
+                                  title='map::gpio::Outset'>Outset</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.OutsetR.html'
+                                  title='map::gpio::OutsetR'>OutsetR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.OutsetW.html'
+                                  title='map::gpio::OutsetW'>OutsetW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.PinCnf.html'
+                                  title='map::gpio::PinCnf'>PinCnf</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.PinCnfR.html'
+                                  title='map::gpio::PinCnfR'>PinCnfR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.PinCnfW.html'
+                                  title='map::gpio::PinCnfW'>PinCnfW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin0.html'
+                                  title='map::gpio::DirEPin0'>DirEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin1.html'
+                                  title='map::gpio::DirEPin1'>DirEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin10.html'
+                                  title='map::gpio::DirEPin10'>DirEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin11.html'
+                                  title='map::gpio::DirEPin11'>DirEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin12.html'
+                                  title='map::gpio::DirEPin12'>DirEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin13.html'
+                                  title='map::gpio::DirEPin13'>DirEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin14.html'
+                                  title='map::gpio::DirEPin14'>DirEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin15.html'
+                                  title='map::gpio::DirEPin15'>DirEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin16.html'
+                                  title='map::gpio::DirEPin16'>DirEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin17.html'
+                                  title='map::gpio::DirEPin17'>DirEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin18.html'
+                                  title='map::gpio::DirEPin18'>DirEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin19.html'
+                                  title='map::gpio::DirEPin19'>DirEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin2.html'
+                                  title='map::gpio::DirEPin2'>DirEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin20.html'
+                                  title='map::gpio::DirEPin20'>DirEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin21.html'
+                                  title='map::gpio::DirEPin21'>DirEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin22.html'
+                                  title='map::gpio::DirEPin22'>DirEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin23.html'
+                                  title='map::gpio::DirEPin23'>DirEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin24.html'
+                                  title='map::gpio::DirEPin24'>DirEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin25.html'
+                                  title='map::gpio::DirEPin25'>DirEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin26.html'
+                                  title='map::gpio::DirEPin26'>DirEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin27.html'
+                                  title='map::gpio::DirEPin27'>DirEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin28.html'
+                                  title='map::gpio::DirEPin28'>DirEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin29.html'
+                                  title='map::gpio::DirEPin29'>DirEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin3.html'
+                                  title='map::gpio::DirEPin3'>DirEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin30.html'
+                                  title='map::gpio::DirEPin30'>DirEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin31.html'
+                                  title='map::gpio::DirEPin31'>DirEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin4.html'
+                                  title='map::gpio::DirEPin4'>DirEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin5.html'
+                                  title='map::gpio::DirEPin5'>DirEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin6.html'
+                                  title='map::gpio::DirEPin6'>DirEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin7.html'
+                                  title='map::gpio::DirEPin7'>DirEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin8.html'
+                                  title='map::gpio::DirEPin8'>DirEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirEPin9.html'
+                                  title='map::gpio::DirEPin9'>DirEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin0.html'
+                                  title='map::gpio::DirclrEPin0'>DirclrEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin1.html'
+                                  title='map::gpio::DirclrEPin1'>DirclrEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin10.html'
+                                  title='map::gpio::DirclrEPin10'>DirclrEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin11.html'
+                                  title='map::gpio::DirclrEPin11'>DirclrEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin12.html'
+                                  title='map::gpio::DirclrEPin12'>DirclrEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin13.html'
+                                  title='map::gpio::DirclrEPin13'>DirclrEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin14.html'
+                                  title='map::gpio::DirclrEPin14'>DirclrEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin15.html'
+                                  title='map::gpio::DirclrEPin15'>DirclrEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin16.html'
+                                  title='map::gpio::DirclrEPin16'>DirclrEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin17.html'
+                                  title='map::gpio::DirclrEPin17'>DirclrEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin18.html'
+                                  title='map::gpio::DirclrEPin18'>DirclrEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin19.html'
+                                  title='map::gpio::DirclrEPin19'>DirclrEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin2.html'
+                                  title='map::gpio::DirclrEPin2'>DirclrEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin20.html'
+                                  title='map::gpio::DirclrEPin20'>DirclrEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin21.html'
+                                  title='map::gpio::DirclrEPin21'>DirclrEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin22.html'
+                                  title='map::gpio::DirclrEPin22'>DirclrEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin23.html'
+                                  title='map::gpio::DirclrEPin23'>DirclrEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin24.html'
+                                  title='map::gpio::DirclrEPin24'>DirclrEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin25.html'
+                                  title='map::gpio::DirclrEPin25'>DirclrEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin26.html'
+                                  title='map::gpio::DirclrEPin26'>DirclrEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin27.html'
+                                  title='map::gpio::DirclrEPin27'>DirclrEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin28.html'
+                                  title='map::gpio::DirclrEPin28'>DirclrEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin29.html'
+                                  title='map::gpio::DirclrEPin29'>DirclrEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin3.html'
+                                  title='map::gpio::DirclrEPin3'>DirclrEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin30.html'
+                                  title='map::gpio::DirclrEPin30'>DirclrEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin31.html'
+                                  title='map::gpio::DirclrEPin31'>DirclrEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin4.html'
+                                  title='map::gpio::DirclrEPin4'>DirclrEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin5.html'
+                                  title='map::gpio::DirclrEPin5'>DirclrEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin6.html'
+                                  title='map::gpio::DirclrEPin6'>DirclrEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin7.html'
+                                  title='map::gpio::DirclrEPin7'>DirclrEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin8.html'
+                                  title='map::gpio::DirclrEPin8'>DirclrEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirclrEPin9.html'
+                                  title='map::gpio::DirclrEPin9'>DirclrEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin0.html'
+                                  title='map::gpio::DirsetEPin0'>DirsetEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin1.html'
+                                  title='map::gpio::DirsetEPin1'>DirsetEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin10.html'
+                                  title='map::gpio::DirsetEPin10'>DirsetEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin11.html'
+                                  title='map::gpio::DirsetEPin11'>DirsetEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin12.html'
+                                  title='map::gpio::DirsetEPin12'>DirsetEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin13.html'
+                                  title='map::gpio::DirsetEPin13'>DirsetEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin14.html'
+                                  title='map::gpio::DirsetEPin14'>DirsetEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin15.html'
+                                  title='map::gpio::DirsetEPin15'>DirsetEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin16.html'
+                                  title='map::gpio::DirsetEPin16'>DirsetEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin17.html'
+                                  title='map::gpio::DirsetEPin17'>DirsetEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin18.html'
+                                  title='map::gpio::DirsetEPin18'>DirsetEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin19.html'
+                                  title='map::gpio::DirsetEPin19'>DirsetEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin2.html'
+                                  title='map::gpio::DirsetEPin2'>DirsetEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin20.html'
+                                  title='map::gpio::DirsetEPin20'>DirsetEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin21.html'
+                                  title='map::gpio::DirsetEPin21'>DirsetEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin22.html'
+                                  title='map::gpio::DirsetEPin22'>DirsetEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin23.html'
+                                  title='map::gpio::DirsetEPin23'>DirsetEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin24.html'
+                                  title='map::gpio::DirsetEPin24'>DirsetEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin25.html'
+                                  title='map::gpio::DirsetEPin25'>DirsetEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin26.html'
+                                  title='map::gpio::DirsetEPin26'>DirsetEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin27.html'
+                                  title='map::gpio::DirsetEPin27'>DirsetEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin28.html'
+                                  title='map::gpio::DirsetEPin28'>DirsetEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin29.html'
+                                  title='map::gpio::DirsetEPin29'>DirsetEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin3.html'
+                                  title='map::gpio::DirsetEPin3'>DirsetEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin30.html'
+                                  title='map::gpio::DirsetEPin30'>DirsetEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin31.html'
+                                  title='map::gpio::DirsetEPin31'>DirsetEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin4.html'
+                                  title='map::gpio::DirsetEPin4'>DirsetEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin5.html'
+                                  title='map::gpio::DirsetEPin5'>DirsetEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin6.html'
+                                  title='map::gpio::DirsetEPin6'>DirsetEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin7.html'
+                                  title='map::gpio::DirsetEPin7'>DirsetEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin8.html'
+                                  title='map::gpio::DirsetEPin8'>DirsetEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.DirsetEPin9.html'
+                                  title='map::gpio::DirsetEPin9'>DirsetEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin0.html'
+                                  title='map::gpio::InEPin0'>InEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin1.html'
+                                  title='map::gpio::InEPin1'>InEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin10.html'
+                                  title='map::gpio::InEPin10'>InEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin11.html'
+                                  title='map::gpio::InEPin11'>InEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin12.html'
+                                  title='map::gpio::InEPin12'>InEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin13.html'
+                                  title='map::gpio::InEPin13'>InEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin14.html'
+                                  title='map::gpio::InEPin14'>InEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin15.html'
+                                  title='map::gpio::InEPin15'>InEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin16.html'
+                                  title='map::gpio::InEPin16'>InEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin17.html'
+                                  title='map::gpio::InEPin17'>InEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin18.html'
+                                  title='map::gpio::InEPin18'>InEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin19.html'
+                                  title='map::gpio::InEPin19'>InEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin2.html'
+                                  title='map::gpio::InEPin2'>InEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin20.html'
+                                  title='map::gpio::InEPin20'>InEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin21.html'
+                                  title='map::gpio::InEPin21'>InEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin22.html'
+                                  title='map::gpio::InEPin22'>InEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin23.html'
+                                  title='map::gpio::InEPin23'>InEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin24.html'
+                                  title='map::gpio::InEPin24'>InEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin25.html'
+                                  title='map::gpio::InEPin25'>InEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin26.html'
+                                  title='map::gpio::InEPin26'>InEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin27.html'
+                                  title='map::gpio::InEPin27'>InEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin28.html'
+                                  title='map::gpio::InEPin28'>InEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin29.html'
+                                  title='map::gpio::InEPin29'>InEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin3.html'
+                                  title='map::gpio::InEPin3'>InEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin30.html'
+                                  title='map::gpio::InEPin30'>InEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin31.html'
+                                  title='map::gpio::InEPin31'>InEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin4.html'
+                                  title='map::gpio::InEPin4'>InEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin5.html'
+                                  title='map::gpio::InEPin5'>InEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin6.html'
+                                  title='map::gpio::InEPin6'>InEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin7.html'
+                                  title='map::gpio::InEPin7'>InEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin8.html'
+                                  title='map::gpio::InEPin8'>InEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.InEPin9.html'
+                                  title='map::gpio::InEPin9'>InEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin0.html'
+                                  title='map::gpio::OutEPin0'>OutEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin1.html'
+                                  title='map::gpio::OutEPin1'>OutEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin10.html'
+                                  title='map::gpio::OutEPin10'>OutEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin11.html'
+                                  title='map::gpio::OutEPin11'>OutEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin12.html'
+                                  title='map::gpio::OutEPin12'>OutEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin13.html'
+                                  title='map::gpio::OutEPin13'>OutEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin14.html'
+                                  title='map::gpio::OutEPin14'>OutEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin15.html'
+                                  title='map::gpio::OutEPin15'>OutEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin16.html'
+                                  title='map::gpio::OutEPin16'>OutEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin17.html'
+                                  title='map::gpio::OutEPin17'>OutEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin18.html'
+                                  title='map::gpio::OutEPin18'>OutEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin19.html'
+                                  title='map::gpio::OutEPin19'>OutEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin2.html'
+                                  title='map::gpio::OutEPin2'>OutEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin20.html'
+                                  title='map::gpio::OutEPin20'>OutEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin21.html'
+                                  title='map::gpio::OutEPin21'>OutEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin22.html'
+                                  title='map::gpio::OutEPin22'>OutEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin23.html'
+                                  title='map::gpio::OutEPin23'>OutEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin24.html'
+                                  title='map::gpio::OutEPin24'>OutEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin25.html'
+                                  title='map::gpio::OutEPin25'>OutEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin26.html'
+                                  title='map::gpio::OutEPin26'>OutEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin27.html'
+                                  title='map::gpio::OutEPin27'>OutEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin28.html'
+                                  title='map::gpio::OutEPin28'>OutEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin29.html'
+                                  title='map::gpio::OutEPin29'>OutEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin3.html'
+                                  title='map::gpio::OutEPin3'>OutEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin30.html'
+                                  title='map::gpio::OutEPin30'>OutEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin31.html'
+                                  title='map::gpio::OutEPin31'>OutEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin4.html'
+                                  title='map::gpio::OutEPin4'>OutEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin5.html'
+                                  title='map::gpio::OutEPin5'>OutEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin6.html'
+                                  title='map::gpio::OutEPin6'>OutEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin7.html'
+                                  title='map::gpio::OutEPin7'>OutEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin8.html'
+                                  title='map::gpio::OutEPin8'>OutEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutEPin9.html'
+                                  title='map::gpio::OutEPin9'>OutEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin0.html'
+                                  title='map::gpio::OutclrEPin0'>OutclrEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin1.html'
+                                  title='map::gpio::OutclrEPin1'>OutclrEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin10.html'
+                                  title='map::gpio::OutclrEPin10'>OutclrEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin11.html'
+                                  title='map::gpio::OutclrEPin11'>OutclrEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin12.html'
+                                  title='map::gpio::OutclrEPin12'>OutclrEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin13.html'
+                                  title='map::gpio::OutclrEPin13'>OutclrEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin14.html'
+                                  title='map::gpio::OutclrEPin14'>OutclrEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin15.html'
+                                  title='map::gpio::OutclrEPin15'>OutclrEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin16.html'
+                                  title='map::gpio::OutclrEPin16'>OutclrEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin17.html'
+                                  title='map::gpio::OutclrEPin17'>OutclrEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin18.html'
+                                  title='map::gpio::OutclrEPin18'>OutclrEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin19.html'
+                                  title='map::gpio::OutclrEPin19'>OutclrEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin2.html'
+                                  title='map::gpio::OutclrEPin2'>OutclrEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin20.html'
+                                  title='map::gpio::OutclrEPin20'>OutclrEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin21.html'
+                                  title='map::gpio::OutclrEPin21'>OutclrEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin22.html'
+                                  title='map::gpio::OutclrEPin22'>OutclrEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin23.html'
+                                  title='map::gpio::OutclrEPin23'>OutclrEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin24.html'
+                                  title='map::gpio::OutclrEPin24'>OutclrEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin25.html'
+                                  title='map::gpio::OutclrEPin25'>OutclrEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin26.html'
+                                  title='map::gpio::OutclrEPin26'>OutclrEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin27.html'
+                                  title='map::gpio::OutclrEPin27'>OutclrEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin28.html'
+                                  title='map::gpio::OutclrEPin28'>OutclrEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin29.html'
+                                  title='map::gpio::OutclrEPin29'>OutclrEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin3.html'
+                                  title='map::gpio::OutclrEPin3'>OutclrEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin30.html'
+                                  title='map::gpio::OutclrEPin30'>OutclrEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin31.html'
+                                  title='map::gpio::OutclrEPin31'>OutclrEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin4.html'
+                                  title='map::gpio::OutclrEPin4'>OutclrEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin5.html'
+                                  title='map::gpio::OutclrEPin5'>OutclrEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin6.html'
+                                  title='map::gpio::OutclrEPin6'>OutclrEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin7.html'
+                                  title='map::gpio::OutclrEPin7'>OutclrEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin8.html'
+                                  title='map::gpio::OutclrEPin8'>OutclrEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutclrEPin9.html'
+                                  title='map::gpio::OutclrEPin9'>OutclrEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin0.html'
+                                  title='map::gpio::OutsetEPin0'>OutsetEPin0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin1.html'
+                                  title='map::gpio::OutsetEPin1'>OutsetEPin1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin10.html'
+                                  title='map::gpio::OutsetEPin10'>OutsetEPin10</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin11.html'
+                                  title='map::gpio::OutsetEPin11'>OutsetEPin11</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin12.html'
+                                  title='map::gpio::OutsetEPin12'>OutsetEPin12</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin13.html'
+                                  title='map::gpio::OutsetEPin13'>OutsetEPin13</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin14.html'
+                                  title='map::gpio::OutsetEPin14'>OutsetEPin14</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin15.html'
+                                  title='map::gpio::OutsetEPin15'>OutsetEPin15</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin16.html'
+                                  title='map::gpio::OutsetEPin16'>OutsetEPin16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin17.html'
+                                  title='map::gpio::OutsetEPin17'>OutsetEPin17</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin18.html'
+                                  title='map::gpio::OutsetEPin18'>OutsetEPin18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin19.html'
+                                  title='map::gpio::OutsetEPin19'>OutsetEPin19</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin2.html'
+                                  title='map::gpio::OutsetEPin2'>OutsetEPin2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin20.html'
+                                  title='map::gpio::OutsetEPin20'>OutsetEPin20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin21.html'
+                                  title='map::gpio::OutsetEPin21'>OutsetEPin21</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin22.html'
+                                  title='map::gpio::OutsetEPin22'>OutsetEPin22</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin23.html'
+                                  title='map::gpio::OutsetEPin23'>OutsetEPin23</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin24.html'
+                                  title='map::gpio::OutsetEPin24'>OutsetEPin24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin25.html'
+                                  title='map::gpio::OutsetEPin25'>OutsetEPin25</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin26.html'
+                                  title='map::gpio::OutsetEPin26'>OutsetEPin26</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin27.html'
+                                  title='map::gpio::OutsetEPin27'>OutsetEPin27</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin28.html'
+                                  title='map::gpio::OutsetEPin28'>OutsetEPin28</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin29.html'
+                                  title='map::gpio::OutsetEPin29'>OutsetEPin29</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin3.html'
+                                  title='map::gpio::OutsetEPin3'>OutsetEPin3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin30.html'
+                                  title='map::gpio::OutsetEPin30'>OutsetEPin30</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin31.html'
+                                  title='map::gpio::OutsetEPin31'>OutsetEPin31</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin4.html'
+                                  title='map::gpio::OutsetEPin4'>OutsetEPin4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin5.html'
+                                  title='map::gpio::OutsetEPin5'>OutsetEPin5</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin6.html'
+                                  title='map::gpio::OutsetEPin6'>OutsetEPin6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin7.html'
+                                  title='map::gpio::OutsetEPin7'>OutsetEPin7</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin8.html'
+                                  title='map::gpio::OutsetEPin8'>OutsetEPin8</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OutsetEPin9.html'
+                                  title='map::gpio::OutsetEPin9'>OutsetEPin9</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PinCnfEDir.html'
+                                  title='map::gpio::PinCnfEDir'>PinCnfEDir</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PinCnfEDrive.html'
+                                  title='map::gpio::PinCnfEDrive'>PinCnfEDrive</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PinCnfEInput.html'
+                                  title='map::gpio::PinCnfEInput'>PinCnfEInput</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PinCnfEPull.html'
+                                  title='map::gpio::PinCnfEPull'>PinCnfEPull</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.PinCnfESense.html'
+                                  title='map::gpio::PinCnfESense'>PinCnfESense</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "map";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
