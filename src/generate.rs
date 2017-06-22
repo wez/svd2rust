@@ -32,46 +32,49 @@ pub fn device(d: &Device, items: &mut Vec<Tokens>) -> Result<()> {
             #![feature(optin_builtin_traits)]
             #![no_std]
 
-            extern crate cortex_m;
+            extern crate common;
             extern crate vcell;
 
             use core::ops::Deref;
 
-            use cortex_m::peripheral::Peripheral;
+            use common::Peripheral;
         },
     );
 
     ::generate::interrupt(&d.peripherals, items);
 
-    const CORE_PERIPHERALS: &'static [&'static str] = &[
-        "CPUID",
-        "DCB",
-        "DWT",
-        "FPB",
-        "FPU",
-        "ITM",
-        "MPU",
-        "NVIC",
-        "SCB",
-        "SYST",
-        "TPIU",
-    ];
+    // FIXME this should be opt-out (assuming Cortex-M is the default target)
+    // const CORE_PERIPHERALS: &'static [&'static str] = &[
+    //     "CPUID",
+    //     "DCB",
+    //     "DWT",
+    //     "FPB",
+    //     "FPU",
+    //     "ITM",
+    //     "MPU",
+    //     "NVIC",
+    //     "SCB",
+    //     "SYST",
+    //     "TPIU",
+    // ];
 
-    for p in CORE_PERIPHERALS {
-        let ty_ = Ident::new(p.to_sanitized_pascal_case());
-        let p = Ident::new(*p);
+    // FIXME this should be opt-out (assuming Cortex-M is the default target)
+    // for p in CORE_PERIPHERALS {
+    //     let ty_ = Ident::new(p.to_sanitized_pascal_case());
+    //     let p = Ident::new(*p);
 
-        items.push(quote! {
-            pub use cortex_m::peripheral::#ty_ as #p;
-            pub use cortex_m::peripheral::#p;
-        });
-    }
+    //     items.push(quote! {
+    //         pub use cortex_m::peripheral::#ty_ as #p;
+    //         pub use cortex_m::peripheral::#p;
+    //     });
+    // }
 
     for p in &d.peripherals {
-        if CORE_PERIPHERALS.contains(&&*p.name.to_uppercase()) {
-            // Core peripherals are handled above
-            continue;
-        }
+        // FIXME this should be opt-out (assuming Cortex-M is the default target)
+        // if CORE_PERIPHERALS.contains(&&*p.name.to_uppercase()) {
+        //     // Core peripherals are handled above
+        //     continue;
+        // }
 
         ::generate::peripheral(p, &d.peripherals, items, &d.defaults)?;
     }
@@ -106,94 +109,98 @@ pub fn interrupt(peripherals: &[Peripheral], items: &mut Vec<Tokens>) {
     let mut mod_items = vec![];
     mod_items.push(
         quote! {
-            use cortex_m::ctxt::Context;
-            use cortex_m::exception;
-            use cortex_m::interrupt::Nr;
+            // TODO this should be opt-out (assuming Cortex-M is the default target)
+            // use common::ctxt::Context;
+            use common::Nr;
+            // TODO this should be opt-out (assuming Cortex-M is the default target)
+            // use cortex_m::exception;
         },
     );
-    for interrupt in &interrupts {
-        if pos < interrupt.value {
-            let name = Ident::new(&*format!("_reserved{}", res));
-            res += 1;
-            let n = util::unsuffixed(u64(interrupt.value - pos));
+    // TODO this should be opt-out (assuming Cortex-M is the default target)
+    // for interrupt in &interrupts {
+    //     if pos < interrupt.value {
+    //         let name = Ident::new(&*format!("_reserved{}", res));
+    //         res += 1;
+    //         let n = util::unsuffixed(u64(interrupt.value - pos));
 
-            uses_reserved = true;
-            fields.push(
-                quote! {
-                    /// Reserved spot in the vector table
-                    pub #name: [Reserved; #n],
-                },
-            );
+    //         uses_reserved = true;
+    //         fields.push(
+    //             quote! {
+    //                 /// Reserved spot in the vector table
+    //                 pub #name: [Reserved; #n],
+    //             },
+    //         );
 
-            exprs.push(
-                quote! {
-                    #name: [Reserved::Vector; #n],
-                },
-            );
-        }
+    //         exprs.push(
+    //             quote! {
+    //                 #name: [Reserved::Vector; #n],
+    //             },
+    //         );
+    //     }
 
-        let name_pc = Ident::new(interrupt.name.to_sanitized_upper_case());
-        let description = format!(
-            "{} - {}",
-            interrupt.value,
-            interrupt
-                .description
-                .as_ref()
-                .map(|s| util::respace(s))
-                .unwrap_or_else(|| interrupt.name.clone())
-        );
-        fields.push(
-            quote! {
-                #[doc = #description]
-                pub #name_pc: extern "C" fn(#name_pc),
-            },
-        );
+    //     let name_pc = Ident::new(interrupt.name.to_sanitized_upper_case());
+    //     let description = format!(
+    //         "{} - {}",
+    //         interrupt.value,
+    //         interrupt
+    //             .description
+    //             .as_ref()
+    //             .map(|s| util::respace(s))
+    //             .unwrap_or_else(|| interrupt.name.clone())
+    //     );
+    //     fields.push(
+    //         quote! {
+    //             #[doc = #description]
+    //             pub #name_pc: extern "C" fn(#name_pc),
+    //         },
+    //     );
 
-        let value = util::unsuffixed(u64(interrupt.value));
-        mod_items.push(
-            quote! {
-                #[doc = #description]
-                pub struct #name_pc { _0: () }
-                unsafe impl Context for #name_pc {}
-                unsafe impl Nr for #name_pc {
-                    #[inline(always)]
-                    fn nr(&self) -> u8 {
-                        #value
-                    }
-                }
-                impl !Send for #name_pc {}
-            },
-        );
+    //     let value = util::unsuffixed(u64(interrupt.value));
+    //     mod_items.push(
+    //         quote! {
+    //             #[doc = #description]
+    //             pub struct #name_pc { _0: () }
+    //             unsafe impl Context for #name_pc {}
+    //             unsafe impl Nr for #name_pc {
+    //                 #[inline(always)]
+    //                 fn nr(&self) -> u8 {
+    //                     #value
+    //                 }
+    //             }
+    //             impl !Send for #name_pc {}
+    //         },
+    //     );
 
-        exprs.push(
-            quote! {
-                #name_pc: exception::default_handler,
-            },
-        );
+    //     exprs.push(
+    //         quote! {
+    //             #name_pc: exception::default_handler,
+    //         },
+    //     );
 
-        variants.push(
-            quote! {
-                #[doc = #description]
-                #name_pc,
-            },
-        );
+    //     variants.push(
+    //         quote! {
+    //             #[doc = #description]
+    //             #name_pc,
+    //         },
+    //     );
 
-        arms.push(
-            quote! {
-                Interrupt::#name_pc => #value,
-            },
-        );
+    //     arms.push(
+    //         quote! {
+    //             Interrupt::#name_pc => #value,
+    //         },
+    //     );
 
-        pos = interrupt.value + 1;
-    }
+    //     pos = interrupt.value + 1;
+    // }
 
-    if uses_reserved {
-        mod_items.push(
-            quote! {
-                use cortex_m::Reserved;
-            },
-        );
-    }
+    // TODO this should be opt-out (assuming Cortex-M is the default target)
+    // if uses_reserved {
+    //     mod_items.push(
+    //         quote! {
+    //             use cortex_m::Reserved;
+    //         },
+    //     );
+    // }
 
     mod_items.push(
         quote! {
