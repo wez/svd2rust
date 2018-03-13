@@ -116,7 +116,7 @@ main() {
             # test_svd ATSAMD21E18A
             # test_svd ATSAMD21G16A
             # test_svd ATSAMD21G17A
-            # test_svd ATSAMD21G18A
+            test_svd ATSAMD21G18A
             # test_svd ATSAMD21J16A
             # test_svd ATSAMD21J17A
             # test_svd ATSAMD21J18A
