@@ -1,14 +1,32 @@
 use std::borrow::Cow;
+use std::collections::HashMap;
 
 use either::Either;
 use quote::{ToTokens, Tokens};
-use svd::{Cluster, ClusterInfo, Defaults, Peripheral, Register};
+use svd::{Cluster, ClusterInfo, Defaults, Peripheral, Register, RegisterInfo};
 use syn::{self, Ident};
 
 use errors::*;
 use util::{self, ToSanitizedSnakeCase, ToSanitizedUpperCase, BITS_PER_BYTE};
 
 use generate::register;
+
+fn derive_peripheral(p: &Peripheral, other: &Peripheral) -> Peripheral {
+	let mut derived = p.clone();
+	if derived.group_name.is_none() {
+		derived.group_name = other.group_name.clone();
+	}
+	if derived.description.is_none() {
+		derived.description = other.description.clone();
+	}
+	if derived.registers.is_none() {
+		derived.registers = other.registers.clone();
+	}
+	if derived.interrupt.is_empty() {
+		derived.interrupt = other.interrupt.clone();
+	}
+	derived
+}
 
 pub fn render(
     p_original: &Peripheral,
@@ -21,7 +39,7 @@ pub fn render(
         all_peripherals.iter().find(|x| x.name == *s)
     });
 
-    let p_merged = p_derivedfrom.map(|x| p_original.derive_from(x));
+    let p_merged = p_derivedfrom.map(|ancestor| derive_peripheral(p_original, ancestor));
     let p = p_merged.as_ref().unwrap_or(p_original);
 
     if p_original.derived_from.is_some() && p_derivedfrom.is_none() {
@@ -73,9 +91,74 @@ pub fn render(
 
     // erc: *E*ither *R*egister or *C*luster
     let ercs = p.registers.as_ref().map(|x| x.as_ref()).unwrap_or(&[][..]);
-
     let registers: &[&Register] = &util::only_registers(&ercs)[..];
+
+    let mut reg_map = HashMap::new();
+
+    for r in registers {
+        reg_map.insert(&r.name, r.clone());
+    }
+
+    // Now make a pass to expand derived registers
+    fn derive_reg_info(info: &RegisterInfo, ancestor: &RegisterInfo) -> RegisterInfo {
+        let mut derived = info.clone();
+
+        if derived.size.is_none() {
+            derived.size = ancestor.size.clone();
+        }
+        if derived.access.is_none() {
+            derived.access = ancestor.access.clone();
+        }
+        if derived.reset_value.is_none() {
+            derived.reset_value = ancestor.reset_value.clone();
+        }
+        if derived.reset_mask.is_none() {
+            derived.reset_mask = ancestor.reset_mask.clone();
+        }
+        if derived.fields.is_none() {
+            derived.fields = ancestor.fields.clone();
+        }
+        if derived.write_constraint.is_none() {
+            derived.write_constraint = ancestor.write_constraint.clone();
+        }
+
+        derived
+    }
+
+    let mut alt_erc :Vec<Either<Register,Cluster>> = registers.iter().filter_map(|r| {
+        match r.derived_from {
+            Some(ref derived) => {
+                let ancestor = match reg_map.get(derived) {
+                    Some(r) => r,
+                    None => {
+                        eprintln!("register {} derivedFrom missing register {}", r.name, derived);
+                        return None
+                    }
+                };
+
+                let d = match **ancestor {
+                    Register::Array(ref info, ref array_info) => {
+                        Some(Either::Left(Register::Array(derive_reg_info(*r, info), array_info.clone())))
+                    }
+                    Register::Single(ref info) => {
+                        Some(Either::Left(Register::Single(derive_reg_info(*r, info))))
+                    }
+                };
+
+                d
+            }
+            None => Some(Either::Left((*r).clone())),
+        }
+    }).collect();
+
     let clusters = util::only_clusters(ercs);
+    for cluster in &clusters {
+        alt_erc.push(Either::Right((*cluster).clone()));
+    }
+
+    let registers: &[&Register] = &util::only_registers(&alt_erc)[..];
+    let clusters = util::only_clusters(ercs);
+    let ercs = &alt_erc;
 
     // No `struct RegisterBlock` can be generated
     if registers.is_empty() && clusters.is_empty() {
